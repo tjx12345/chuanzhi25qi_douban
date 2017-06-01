@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="moviecat">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电影展示</title>
+    <link rel="stylesheet" href="css/style-7dbd51e017.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="header" ng-controller="searchController">
+            <a href="#/home_page"><img src="assets/img/logo.png" alt=""></a>
+            <div class="search">
+                <input class="my-input" type="text" placeholder="电影搜索" ng-model="q">
+                <button ng-click="doSearch(q)">搜索</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <!--li中添加 active 类样式，显示焦点状态。-->
+                <li class="active"><a ui-sref="home_page">首页</a></li>
+                <li><a ui-sref="movielist({movieType:'in_theaters'})">正在热映</a></li>
+                <li><a ui-sref="movielist({movieType:'coming_soon'})">即将上映</a></li>
+                <li><a ui-sref="movielist({movieType:'top250'})">Top250</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <!-- 留坑 -->
+        <div ui-view></div>
+        <!--其他-->
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>版权所有&copy; 前端与移动开发学院 火骑士空空(允许侵权)</p>
+        </div>
+    </footer>
+    <script src="js/angular-133b9992fa.js"></script>
+    <script src="js/main-478e37aa42.js"></script>
+    <!-- 测试json获取一个json对象的后果 -->
+    <!-- <script type="text/javascript" src="./testJsonpGetObj.js"></script> -->
+</body>
+
+</html>
